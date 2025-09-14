@@ -1,0 +1,87 @@
+# =============== #
+# Unity Generated #
+# =============== #
+
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+Assets/AssetStoreTools*
+
+# ==================================== #
+# Burst, Shader Cache, HDRP Artifacts  #
+# ==================================== #
+
+[Bb]urstCache/
+[Bb]ee/
+[Bb]ackup*/
+[Cc]ache/
+ShaderCache/
+UserSettings/
+
+# HDRP caches (lightmapping, GI, etc.)
+LightingData.asset
+Lightmap-*
+ReflectionProbe-*
+GI*
+
+# ================== #
+# OS / IDE Specific  #
+# ================== #
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.sln
+*.csproj
+*.unityproj
+*.pidb
+*.user
+*.userprefs
+*.booproj
+
+# ========== #
+# Build Artifacts #
+# ========== #
+
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+*.xcodeproj
+*.xcworkspace
+*.ipa
+
+# ================= #
+# Crash / Reports   #
+# ================= #
+
+sysinfo.txt
+*.stackdump
+
+# ================= #
+# Rider / JetBrains #
+# ================= #
+
+.idea/
+*.sln.iml
+*.DotSettings.user
+
+# ================= #
+# Extra Ignore      #
+# ================= #
+
+# Unity Cloud Build cache
+.uccache/
+
+# Addressables cache
+[Aa]ssets/[Aa]ddressableAssetsData/*/*.bin*
