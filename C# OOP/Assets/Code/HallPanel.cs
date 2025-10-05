@@ -1,16 +1,30 @@
 using UnityEngine;
 
-public class HallPanel : MonoBehaviour
+/// <summary>
+/// Floor panel – creates hall calls when Up or Down buttons are pressed.
+/// </summary>
+public sealed class HallPanel : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private int floorIndex = 0;
+    [SerializeField] private ElevatorDispatcher dispatcher;
+
+    [System.Obsolete]
+    private void Awake()
     {
-        
+        if (dispatcher == null)
+            dispatcher = FindObjectOfType<ElevatorDispatcher>();
     }
 
-    // Update is called once per frame
-    void Update()
+    // These methods are meant to be called by UI Buttons.
+    public void CallUp()
     {
-        
+        var call = new HallCall(floorIndex, DirectionState.Up);
+        dispatcher.EnqueueHallCall(call);
+    }
+
+    public void CallDown()
+    {
+        var call = new HallCall(floorIndex, DirectionState.Down);
+        dispatcher.EnqueueHallCall(call);
     }
 }

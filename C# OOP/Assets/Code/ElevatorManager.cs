@@ -1,16 +1,22 @@
 using UnityEngine;
 
-public class ElevatorManager : MonoBehaviour
+using System.Collections.Generic;
+
+/// <summary>
+/// Holds references to all elevators and exposes them as IElevator for the dispatcher.
+/// </summary>
+public sealed class ElevatorManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private List<Elevator> elevators = new List<Elevator>();
+
+    public IReadOnlyList<IElevator> GetElevators()
     {
-        
+        return elevators.ConvertAll<IElevator>(e => e);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Register(Elevator e)
     {
-        
+        if (!elevators.Contains(e))
+            elevators.Add(e);
     }
 }

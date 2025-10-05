@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class DirectionState : MonoBehaviour
+// Defines direction for both elevators and hall calls.
+public enum DirectionState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    None = 0,
+    Up = 1,
+    Down = -1
 }

@@ -1,16 +1,18 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+/// <summary>
+/// Root object of the scene – connects managers and initializes references.
+/// </summary>
+public sealed class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private ElevatorManager elevatorManager;
+    [SerializeField] private ElevatorDispatcher dispatcher;
 
-    // Update is called once per frame
-    void Update()
+    [System.Obsolete]
+    private void Awake()
     {
-        
+        if (elevatorManager == null) elevatorManager = FindObjectOfType<ElevatorManager>();
+        if (dispatcher == null) dispatcher = FindObjectOfType<ElevatorDispatcher>();
     }
 }
+
